@@ -1,0 +1,109 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "strict": ["error", "global"],
+    "indent": ["error", 4, {
+      "SwitchCase": 1,
+      "VariableDeclarator": 1,
+      "outerIIFEBody": 1
+    }],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "semi": ["error", "always"],
+    "no-unused-vars": ["warn", {
+      "vars": "all",
+      "args": "after-used",
+      "ignoreRestSiblings": true
+    }],
+    "no-console": ["warn", {
+      "allow": ["warn", "error", "info"]
+    }],
+    "camelcase": ["error", {
+      "properties": "never",
+      "ignoreDestructuring": true
+    }],
+    "max-len": ["error", {
+      "code": 120,
+      "tabWidth": 4,
+      "ignoreComments": true,
+      "ignoreUrls": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "no-underscore-dangle": "off",
+    "no-param-reassign": ["error", {
+      "props": false
+    }],
+    "class-methods-use-this": "off",
+    "consistent-return": "off",
+    "no-shadow": ["error", {
+      "allow": ["err", "error", "done", "resolve", "reject"]
+    }],
+    "object-curly-newline": ["error", {
+      "ObjectExpression": { "consistent": true },
+      "ObjectPattern": { "consistent": true },
+      "ImportDeclaration": { "consistent": true },
+      "ExportDeclaration": { "consistent": true }
+    }],
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/*.test.js",
+        "**/*.spec.js",
+        "**/tests/**/*"
+      ]
+    }],
+    "no-use-before-define": ["error", {
+      "functions": false,
+      "classes": true,
+      "variables": true
+    }],
+    "prefer-destructuring": ["error", {
+      "array": false,
+      "object": true
+    }, {
+      "enforceForRenamedProperties": false
+    }],
+    "no-plusplus": ["error", {
+      "allowForLoopAfterthoughts": true
+    }],
+    "no-await-in-loop": "off",
+    "radix": ["error", "as-needed"],
+    "func-names": "off",
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-continue": "off",
+    "no-prototype-builtins": "off",
+    "import/prefer-default-export": "off",
+    "arrow-body-style": "off",
+    "prefer-template": "error",
+    "no-multiple-empty-lines": ["error", {
+      "max": 2,
+      "maxEOF": 1,
+      "maxBOF": 0
+    }],
+    "object-shorthand": ["error", "always"],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }]
+  }
+}
