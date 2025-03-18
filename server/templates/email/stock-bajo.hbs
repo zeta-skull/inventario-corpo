@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Stock Bajo - {{app_name}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #dc3545;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 0 0 5px 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        .alert {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            text-align: left;
+        }
+        th {
+            background-color: #e9ecef;
+            width: 40%;
+        }
+        .details {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .warning-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚠️ Alerta de Stock Bajo</h1>
+    </div>
+    
+    <div class="content">
+        <div class="alert">
+            <p><strong>¡Atención!</strong></p>
+            <p>Se ha detectado un nivel bajo de stock para el siguiente producto:</p>
+        </div>
+
+        <div class="details">
+            <table>
+                <tr>
+                    <th>Producto:</th>
+                    <td>{{producto.nombre}}</td>
+                </tr>
+                <tr>
+                    <th>Código:</th>
+                    <td>{{producto.codigo}}</td>
+                </tr>
+                <tr>
+                    <th>Categoría:</th>
+                    <td>{{producto.categoria.nombre}}</td>
+                </tr>
+                <tr>
+                    <th>Stock Actual:</th>
+                    <td><strong style="color: #dc3545;">{{stockActual}} unidades</strong></td>
+                </tr>
+                <tr>
+                    <th>Stock Mínimo:</th>
+                    <td>{{stockMinimo}} unidades</td>
+                </tr>
+                <tr>
+                    <th>Ubicación:</th>
+                    <td>{{producto.ubicacion}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Se recomienda tomar las siguientes acciones:</p>
+        <ul>
+            <li>Revisar el historial de movimientos del producto</li>
+            <li>Contactar al proveedor para realizar un nuevo pedido</li>
+            <li>Actualizar el stock mínimo si es necesario</li>
+        </ul>
+
+        <div style="text-align: center;">
+            <a href="{{app_url}}/productos/{{producto.id}}" class="button">Ver Detalles del Producto</a>
+        </div>
+
+        <p style="margin-top: 20px;"><small>Esta alerta se genera automáticamente cuando el stock de un producto cae por debajo del mínimo establecido.</small></p>
+    </div>
+
+    <div class="footer">
+        <p>Este es un correo automático, por favor no responda.</p>
+        <hr style="border: 1px solid #eee; margin: 15px 0;">
+        <p>&copy; {{app_name}} - Diseñado por Eduardo Martinez - Corporacion Pudahuel</p>
+        <p><small>Si recibió este correo por error, por favor ignórelo y notifique al administrador del sistema.</small></p>
+    </div>
+</body>
+</html>

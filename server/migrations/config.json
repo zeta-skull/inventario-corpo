@@ -1,0 +1,79 @@
+{
+  "development": {
+    "username": "root",
+    "password": "##4nt0ni064##",
+    "database": "inventario_corpo",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "timezone": "-03:00",
+    "define": {
+      "charset": "utf8",
+      "collate": "utf8_general_ci",
+      "timestamps": true,
+      "underscored": true,
+      "createdAt": "fecha_creacion",
+      "updatedAt": "fecha_actualizacion",
+      "deletedAt": "fecha_eliminacion",
+      "paranoid": true
+    },
+    "logging": true,
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "sequelize_data"
+  },
+  "test": {
+    "username": "root",
+    "password": "##4nt0ni064##",
+    "database": "inventario_corpo_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "timezone": "-03:00",
+    "define": {
+      "charset": "utf8",
+      "collate": "utf8_general_ci",
+      "timestamps": true,
+      "underscored": true,
+      "createdAt": "fecha_creacion",
+      "updatedAt": "fecha_actualizacion",
+      "deletedAt": "fecha_eliminacion",
+      "paranoid": true
+    },
+    "logging": false,
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "sequelize_data"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "mysql",
+    "timezone": "-03:00",
+    "define": {
+      "charset": "utf8",
+      "collate": "utf8_general_ci",
+      "timestamps": true,
+      "underscored": true,
+      "createdAt": "fecha_creacion",
+      "updatedAt": "fecha_actualizacion",
+      "deletedAt": "fecha_eliminacion",
+      "paranoid": true
+    },
+    "logging": false,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    },
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      },
+      "connectTimeout": 60000
+    },
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "sequelize_data"
+  },
+  "migrationStorageTableName": "sequelize_meta",
+  "seederStorageTableName": "sequelize_data",
+  "migrationStorage": "sequelize",
+  "seederStorage": "sequelize"
+}
